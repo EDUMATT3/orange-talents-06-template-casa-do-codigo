@@ -1,5 +1,7 @@
 package com.zupacademy.eduardo.casadocodigo.autor;
 
+import com.zupacademy.eduardo.casadocodigo.compartilhado.UniqueValue;
+
 import javax.validation.constraints.Email;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.Size;
@@ -11,6 +13,7 @@ public class NovoAutorRequest {
 
     @NotBlank
     @Email
+    @UniqueValue(domainClass = Autor.class, fieldName = "email")
     private String email;
 
     @NotBlank
