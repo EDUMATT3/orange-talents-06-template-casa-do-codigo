@@ -9,6 +9,7 @@ import javax.transaction.Transactional;
 import javax.validation.Valid;
 import java.net.URI;
 import java.util.List;
+import java.util.Optional;
 import java.util.stream.Collectors;
 
 @RestController
@@ -33,5 +34,14 @@ public class LivroController {
             .stream()
             .map(LivroResponse::new)
             .collect(Collectors.toList());
+    }
+
+    @GetMapping("{id}")
+    public ResponseEntity<DetalheLivroResponse> detalhe(@PathVariable Long id){
+        Optional<Livro> possivelLivro = Optional.ofNullable(entityManager.find(Livro.class, id));
+
+        if (possivelLivro.isEmpty()) return ResponseEntity.notFound().build();
+
+        return ResponseEntity.ok(new DetalheLivroResponse(possivelLivro.get()));
     }
 }

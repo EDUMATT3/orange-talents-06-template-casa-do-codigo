@@ -68,6 +68,42 @@ public class Livro {
         return this.id;
     }
 
+    public String getTitulo() {
+        return titulo;
+    }
+
+    public String getResumo() {
+        return resumo;
+    }
+
+    public String getSumario() {
+        return sumario;
+    }
+
+    public BigDecimal getPreco() {
+        return preco;
+    }
+
+    public int getNumeroPaginas() {
+        return numeroPaginas;
+    }
+
+    public String getIsbn() {
+        return isbn;
+    }
+
+    public LocalDate getPublicacao() {
+        return publicacao;
+    }
+
+    public Categoria getCategoria() {
+        return categoria;
+    }
+
+    public Autor getAutor() {
+        return autor;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (o == this)
@@ -79,7 +115,4 @@ public class Livro {
         return Objects.equals(isbn, book.isbn);
     }
 
-    public String getTitulo() {
-        return this.titulo;
-    }
 }
