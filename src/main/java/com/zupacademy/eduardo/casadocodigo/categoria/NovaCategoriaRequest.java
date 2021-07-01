@@ -7,6 +7,7 @@ import javax.validation.constraints.NotBlank;
 public class NovaCategoriaRequest {
 
     @NotBlank
+    @UniqueValue(domainClass = Categoria.class, fieldName = "nome")
     private String nome;
 
     public NovaCategoriaRequest() {
