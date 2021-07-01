@@ -3,6 +3,7 @@ package com.zupacademy.eduardo.casadocodigo.livro;
 import com.fasterxml.jackson.annotation.JsonFormat;
 import com.zupacademy.eduardo.casadocodigo.autor.Autor;
 import com.zupacademy.eduardo.casadocodigo.categoria.Categoria;
+import com.zupacademy.eduardo.casadocodigo.compartilhado.ExistsValue;
 import com.zupacademy.eduardo.casadocodigo.compartilhado.UniqueValue;
 import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.util.Assert;
@@ -44,9 +45,11 @@ public class NovoLivroRequest {
     private LocalDate publicacao;
 
     @NotNull
+    @ExistsValue(domainClass = Categoria.class)
     private Long categoriaId;
 
     @NotNull
+    @ExistsValue(domainClass = Autor.class)
     private Long autorId;
 
     public NovoLivroRequest(String titulo, String resumo, String sumario, BigDecimal preco, int numeroPaginas, String isbn, Long categoriaId, Long autorId) {
