@@ -78,4 +78,8 @@ public class Livro {
         Livro book = (Livro) o;
         return Objects.equals(isbn, book.isbn);
     }
+
+    public String getTitulo() {
+        return this.titulo;
+    }
 }
