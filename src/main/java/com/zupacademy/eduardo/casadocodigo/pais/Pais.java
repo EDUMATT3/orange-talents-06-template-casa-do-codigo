@@ -17,6 +17,10 @@ public class Pais {
     @NotBlank
     private String nome;
 
+    @Deprecated
+    public Pais() {
+    }
+
     public Pais(@NotBlank String nome) {
         this.nome = nome;
     }
