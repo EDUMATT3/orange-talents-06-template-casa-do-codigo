@@ -26,7 +26,7 @@ public class NovoEstadoRequest {
 
     public Estado toModel(EntityManager entityManager) {
         Pais pais = entityManager.find(Pais.class, this.paisId);
-        Assert.state(Objects.nonNull(pais), "Categoria não encontrada com o id: "+ paisId);
+        Assert.state(Objects.nonNull(pais), "País não encontrada com o id: "+ paisId);
 
         return new Estado(this.nome, pais);
     }

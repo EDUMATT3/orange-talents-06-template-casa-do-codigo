@@ -12,3 +12,6 @@ insert into categoria(id, nome) values
 insert into livro (id, autor_id, categoria_id, isbn, numero_paginas, preco, publicacao, resumo, sumario, titulo) values
 (null, 1, 1, 'isbn1', 101, 25.1, '2022-05-13', 'resumo 1', 'sumario 1', 'titulo 1'),
 (null, 2, 2, 'isbn2', 102, 25.2, '2023-05-13', 'resumo 2', 'sumario 2', 'titulo 2');
+
+insert into pais(id, nome) values (null, 'Brazil'),(null, 'Estados Unidos');
+insert into estado(id, nome, pais_id) values (null, 'SP',1),(null, 'NY',2);
