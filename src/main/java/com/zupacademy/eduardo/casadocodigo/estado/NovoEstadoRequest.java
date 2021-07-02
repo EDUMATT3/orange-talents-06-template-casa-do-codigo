@@ -30,4 +30,12 @@ public class NovoEstadoRequest {
 
         return new Estado(this.nome, pais);
     }
+
+    public String getNome() {
+        return this.nome;
+    }
+
+    public Long getPaisId() {
+        return this.paisId;
+    }
 }
